@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tasks</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector("form").onsubmit = function () {
+          const tasks_value = document.querySelector("#task").value;
+          const li = document.createElement("li");
+          li.innerHTML = tasks_value;
+          document.querySelector("#tasks").append(li);
+
+          document.querySelector("#task").value = "";
+
+          return false;
+        };
+      });
+    </script>
+  </head>
+  <body>
+    <h1>To-Do List</h1>
+    <h2>Enter Tasks</h2>
+    <form>
+      <input type="text" id="task" name="task" placeholder="Enter Task" />
+      <input type="submit" id="submit" name="submit" placeholder="Submit" />
+    </form>
+    <h2>The daily tasks are:</h2>
+    <ul id="tasks"></ul>
+  </body>
+</html>
